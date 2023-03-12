@@ -1,0 +1,9 @@
+engine:
+  commands:
+    destination:
+      name: test-engine-commands
+
+bot:
+  enabled: false
+  name: "Unknown"
+  token: "Unknown"

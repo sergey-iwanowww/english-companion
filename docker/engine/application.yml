@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ec-postgres:5432/englishcompanion
+    username: englishcompanion
+    password: englishcompanion
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  # spring.datasource.initialization-mode
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    ignore-future-migrations: false
+  rabbitmq:
+    host: ec-rabbitmq
+    port: 5672
+
+logging:
+  level:
+    ru.isg.englishcompanion: DEBUG

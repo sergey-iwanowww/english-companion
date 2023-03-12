@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/englishcompanion
+    username: englishcompanion
+    password: englishcompanion
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    ignore-future-migrations: false
+
+logging:
+  level:
+    ru.isg.englishcompanion: DEBUG

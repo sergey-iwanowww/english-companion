@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    host: ec-rabbitmq
+    port: 5672
+
+logging:
+  level:
+    ru.isg.englishcompanion: DEBUG
+

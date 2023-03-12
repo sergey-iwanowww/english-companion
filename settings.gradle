@@ -1,0 +1,5 @@
+rootProject.name = 'english-companion'
+
+include 'libs:common'
+include 'services:engine'
+include 'services:telegram-bot'

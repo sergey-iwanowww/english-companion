@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+
+  ec-rabbitmq:
+    image: rabbitmq:3.11-management
+    hostname: ec-rabbitmq
+    container_name: ec-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - ec
+
+  ec-postgres:
+    image: postgres:14.1
+    container_name: ec-postgres
+    hostname: ec-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: englishcompanion
+      POSTGRES_PASSWORD: englishcompanion
+      POSTGRES_DB: englishcompanion
+    networks:
+      - ec
+
+  ec-engine:
+    image: ec-engine:latest
+    hostname: ec-engine
+    container_name: ec-engine
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - ec-rabbitmq
+      - ec-postgres
+    networks:
+      - ec
+    environment:
+      SPRING_CONFIG_NAME: "application"
+      SPRING_CONFIG_LOCATION: "file:///etc/spring/"
+    volumes:
+      - "./engine:/etc/spring:ro"
+
+  ec-telegram-bot:
+    image: ec-telegram-bot:latest
+    hostname: ec-telegram-bot
+    container_name: ec-telegram-bot
+    restart: unless-stopped
+    depends_on:
+      - ec-rabbitmq
+      - ec-engine
+    networks:
+      - ec
+    environment:
+      SPRING_CONFIG_NAME: "application"
+      SPRING_CONFIG_LOCATION: "file:///etc/spring/"
+      BOT_NAME: "${BOT_NAME:-Unknown}"
+      BOT_TOKEN: "${BOT_TOKEN:-Unknown}"
+    volumes:
+      - "./telegram-bot:/etc/spring:ro"
+
+networks:
+  ec:
