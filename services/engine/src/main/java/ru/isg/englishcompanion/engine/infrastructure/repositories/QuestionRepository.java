@@ -1,9 +1,9 @@
-package ru.isg.englishcompanion.engine.application.repositories;
+package ru.isg.englishcompanion.engine.infrastructure.repositories;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.isg.englishcompanion.engine.application.model.Question;
-import ru.isg.englishcompanion.engine.application.model.QuestionStatuses;
+import ru.isg.englishcompanion.engine.domain.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.QuestionStatuses;
 
 import java.util.List;
 import java.util.Optional;

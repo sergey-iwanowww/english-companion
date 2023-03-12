@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.telegrambot.application.messaging;
+package ru.isg.englishcompanion.telegrambot.infrastructure.messaging;
 
 import com.rabbitmq.client.Channel;
 import jakarta.validation.constraints.NotNull;
@@ -15,6 +15,7 @@ import ru.isg.englishcompanion.common.dto.engineevents.QuestionAnsweredNotCorrec
 import ru.isg.englishcompanion.common.dto.engineevents.QuestionAskedEventDto;
 import ru.isg.englishcompanion.common.dto.engineevents.QuestionCancelledEventDto;
 import ru.isg.englishcompanion.common.dto.engineevents.TranslationSavedEventDto;
+import ru.isg.englishcompanion.telegrambot.application.services.EngineEventsHandler;
 
 import java.io.IOException;
 

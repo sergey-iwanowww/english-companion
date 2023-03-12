@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.telegrambot.application.bot;
+package ru.isg.englishcompanion.telegrambot.application.services;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

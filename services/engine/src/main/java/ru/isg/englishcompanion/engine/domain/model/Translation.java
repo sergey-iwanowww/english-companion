@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.model;
+package ru.isg.englishcompanion.engine.domain.model;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;

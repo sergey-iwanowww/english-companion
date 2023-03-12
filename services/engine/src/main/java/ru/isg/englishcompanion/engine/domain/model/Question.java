@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.model;
+package ru.isg.englishcompanion.engine.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,10 +16,10 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static jakarta.persistence.EnumType.STRING;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.ANSWERED_CORRECTLY;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.CANCELLED;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.NEW;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.WAITING_FOR_ANSWER;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.ANSWERED_CORRECTLY;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.CANCELLED;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.NEW;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.WAITING_FOR_ANSWER;
 
 @Entity
 @Table(name = "questions")

@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.messaging;
+package ru.isg.englishcompanion.engine.application.services;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import ru.isg.englishcompanion.common.dto.enginecommands.AcceptAnswerCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.CancelQuestionCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.SaveTranslationCommandDto;
-import ru.isg.englishcompanion.engine.application.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.Question;
 import ru.isg.englishcompanion.engine.application.services.QuestionService;
 import ru.isg.englishcompanion.engine.application.services.TranslationService;
 

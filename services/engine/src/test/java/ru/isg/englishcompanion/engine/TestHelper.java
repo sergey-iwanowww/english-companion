@@ -4,10 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Component;
-import ru.isg.englishcompanion.engine.application.model.Question;
-import ru.isg.englishcompanion.engine.application.model.Translation;
-import ru.isg.englishcompanion.engine.application.repositories.QuestionRepository;
-import ru.isg.englishcompanion.engine.application.repositories.TranslationRepository;
+import ru.isg.englishcompanion.engine.domain.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.Translation;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.QuestionRepository;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.TranslationRepository;
 
 import java.util.List;
 

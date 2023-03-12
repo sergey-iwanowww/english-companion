@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.telegrambot.application.bot;
+package ru.isg.englishcompanion.telegrambot.application.services;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.isg.englishcompanion.common.dto.enginecommands.CancelQuestionCommandDto;
-import ru.isg.englishcompanion.telegrambot.application.messaging.EngineCommandsPublisher;
+import ru.isg.englishcompanion.telegrambot.infrastructure.messaging.EngineCommandsPublisher;
 
 @Component
 @Validated

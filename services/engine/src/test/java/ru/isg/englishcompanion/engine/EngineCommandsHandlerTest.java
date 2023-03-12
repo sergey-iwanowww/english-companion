@@ -16,11 +16,11 @@ import ru.isg.englishcompanion.common.dto.engineevents.QuestionAnsweredNotCorrec
 import ru.isg.englishcompanion.common.dto.engineevents.QuestionCancelledEventDto;
 import ru.isg.englishcompanion.common.dto.engineevents.TranslationSavedEventDto;
 import ru.isg.englishcompanion.engine.application.exceptions.QuestionNotFoundException;
-import ru.isg.englishcompanion.engine.application.messaging.EngineCommandsHandler;
-import ru.isg.englishcompanion.engine.application.model.Question;
-import ru.isg.englishcompanion.engine.application.model.Translation;
-import ru.isg.englishcompanion.engine.application.repositories.QuestionRepository;
-import ru.isg.englishcompanion.engine.application.repositories.TranslationRepository;
+import ru.isg.englishcompanion.engine.application.services.EngineCommandsHandler;
+import ru.isg.englishcompanion.engine.domain.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.Translation;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.QuestionRepository;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.TranslationRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,9 +33,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.ANSWERED_CORRECTLY;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.CANCELLED;
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.WAITING_FOR_ANSWER;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.ANSWERED_CORRECTLY;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.CANCELLED;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.WAITING_FOR_ANSWER;
 
 @SpringBootTest
 public class EngineCommandsHandlerTest {

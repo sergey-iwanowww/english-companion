@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.controllers;
+package ru.isg.englishcompanion.engine.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

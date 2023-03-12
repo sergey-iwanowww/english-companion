@@ -6,17 +6,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
-import ru.isg.englishcompanion.engine.application.model.Question;
-import ru.isg.englishcompanion.engine.application.model.Translation;
-import ru.isg.englishcompanion.engine.application.repositories.QuestionRepository;
-import ru.isg.englishcompanion.engine.application.repositories.TranslationRepository;
+import ru.isg.englishcompanion.engine.domain.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.Translation;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.QuestionRepository;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.TranslationRepository;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-import static ru.isg.englishcompanion.engine.application.model.QuestionStatuses.ANSWERED_CORRECTLY;
+import static ru.isg.englishcompanion.engine.domain.model.QuestionStatuses.ANSWERED_CORRECTLY;
 
 @Component
 @Validated

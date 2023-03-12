@@ -12,12 +12,12 @@ import ru.isg.englishcompanion.common.dto.engineevents.QuestionAnsweredNotCorrec
 import ru.isg.englishcompanion.common.dto.engineevents.QuestionAskedEventDto;
 import ru.isg.englishcompanion.common.dto.engineevents.QuestionCancelledEventDto;
 import ru.isg.englishcompanion.engine.application.exceptions.QuestionNotFoundException;
-import ru.isg.englishcompanion.engine.application.messaging.EngineEventsPublisher;
-import ru.isg.englishcompanion.engine.application.model.Question;
-import ru.isg.englishcompanion.engine.application.model.QuestionStatuses;
-import ru.isg.englishcompanion.engine.application.model.Translation;
-import ru.isg.englishcompanion.engine.application.repositories.QuestionRepository;
-import ru.isg.englishcompanion.engine.application.repositories.TranslationRepository;
+import ru.isg.englishcompanion.engine.infrastructure.messaging.EngineEventsPublisher;
+import ru.isg.englishcompanion.engine.domain.model.Question;
+import ru.isg.englishcompanion.engine.domain.model.QuestionStatuses;
+import ru.isg.englishcompanion.engine.domain.model.Translation;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.QuestionRepository;
+import ru.isg.englishcompanion.engine.infrastructure.repositories.TranslationRepository;
 
 import java.util.List;
 import java.util.Optional;

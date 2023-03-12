@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.telegrambot.application.bot;
+package ru.isg.englishcompanion.telegrambot.infrastructure.bot;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
@@ -46,31 +46,7 @@ public class EnglishCompanionBot extends TelegramLongPollingBot {
         return name;
     }
 
-    public void sendTranslationCreatedText(long chatId, int replyToMessageId) {
-        sendTextMessage(chatId, TRANSLATION_CREATED_TEXT, replyToMessageId);
-    }
-
-    public void sendTranslationUpdatedText(long chatId, int replyToMessageId) {
-        sendTextMessage(chatId, TRANSLATION_UPDATED_TEXT, replyToMessageId);
-    }
-
-    public void sendQuestionAddedText(long chatId, String phrase) {
-        sendTextMessage(chatId, format(QUESTION_ADDED_TEXT, phrase), null);
-    }
-
-    public void sendQuestionAnsweredCorrectlyText(long chatId, String phrase, int answerMessageId) {
-        sendTextMessage(chatId, format(QUESTION_ANSWERED_CORRECTLY_TEXT, phrase), answerMessageId);
-    }
-
-    public void sendQuestionAnsweredNotCorrectlyText(long chatId, String phrase, int answerMessageId) {
-        sendTextMessage(chatId, format(QUESTION_ANSWERED_NOT_CORRECTLY_TEXT, phrase), answerMessageId);
-    }
-
-    public void sendQuestionCancelledText(long chatId, String phrase, int cancelMessageId) {
-        sendTextMessage(chatId, format(QUESTION_CANCELLED_TEXT, phrase), cancelMessageId);
-    }
-
-    private void sendTextMessage(long chatId, String text, @Nullable Integer replyToMessageId) {
+    public void sendTextMessage(long chatId, @NotNull String text, @Nullable Integer replyToMessageId) {
         SendMessage sendMessage = new SendMessage("" + chatId, text);
         sendMessage.setReplyToMessageId(replyToMessageId);
         try {

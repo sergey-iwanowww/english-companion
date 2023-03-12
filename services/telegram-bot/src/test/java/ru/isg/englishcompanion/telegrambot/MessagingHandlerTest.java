@@ -12,7 +12,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.isg.englishcompanion.common.dto.enginecommands.AcceptAnswerCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.CancelQuestionCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.SaveTranslationCommandDto;
-import ru.isg.englishcompanion.telegrambot.application.bot.UpdateHandler;
+import ru.isg.englishcompanion.telegrambot.infrastructure.bot.UpdateHandler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;

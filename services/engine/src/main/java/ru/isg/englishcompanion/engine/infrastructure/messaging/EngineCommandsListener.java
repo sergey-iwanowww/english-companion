@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.messaging;
+package ru.isg.englishcompanion.engine.infrastructure.messaging;
 
 import com.rabbitmq.client.Channel;
 import jakarta.validation.constraints.NotNull;
@@ -16,6 +16,7 @@ import ru.isg.englishcompanion.common.dto.enginecommands.AcceptAnswerCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.CancelQuestionCommandDto;
 import ru.isg.englishcompanion.common.dto.enginecommands.SaveTranslationCommandDto;
 import ru.isg.englishcompanion.engine.application.exceptions.QuestionNotFoundException;
+import ru.isg.englishcompanion.engine.application.services.EngineCommandsHandler;
 
 import java.io.IOException;
 

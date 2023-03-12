@@ -1,24 +1,26 @@
-package ru.isg.englishcompanion.telegrambot.application.bot;
+package ru.isg.englishcompanion.telegrambot.application.services;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import ru.isg.englishcompanion.common.dto.enginecommands.AcceptAnswerCommandDto;
-import ru.isg.englishcompanion.telegrambot.application.messaging.EngineCommandsPublisher;
+import ru.isg.englishcompanion.common.dto.enginecommands.SaveTranslationCommandDto;
+import ru.isg.englishcompanion.telegrambot.infrastructure.messaging.EngineCommandsPublisher;
+
+import java.util.Arrays;
 
 @Component
 @Validated
 @RequiredArgsConstructor
-public class AcceptAnswerUpdateHandler implements CommandUpdateHandler {
+public class SaveTranslationUpdateHandler implements CommandUpdateHandler {
 
     private final EngineCommandsPublisher engineCommandsPublisher;
 
     @Override
     public boolean isCompatible(@NotNull Update update) {
         String[] lines = update.getMessage().getText().split("\\n");
-        return lines.length == 1 && !lines[0].equals(".") && !lines[0].equals("-");
+        return lines.length > 1;
     }
 
     @Override
@@ -26,10 +28,11 @@ public class AcceptAnswerUpdateHandler implements CommandUpdateHandler {
 
         String[] lines = update.getMessage().getText().split("\\n");
 
-        AcceptAnswerCommandDto commandDto = new AcceptAnswerCommandDto(
+        SaveTranslationCommandDto commandDto = new SaveTranslationCommandDto(
                 update.getMessage().getChatId(),
                 update.getMessage().getMessageId(),
-                lines[0]);
+                lines[0],
+                Arrays.asList(Arrays.copyOfRange(lines, 1, lines.length)));
         engineCommandsPublisher.publish(commandDto);
     }
 }

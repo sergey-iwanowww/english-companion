@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.messaging;
+package ru.isg.englishcompanion.engine.infrastructure.messaging;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

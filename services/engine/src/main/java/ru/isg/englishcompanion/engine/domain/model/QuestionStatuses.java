@@ -1,4 +1,4 @@
-package ru.isg.englishcompanion.engine.application.model;
+package ru.isg.englishcompanion.engine.domain.model;
 
 public enum QuestionStatuses {
     NEW,
