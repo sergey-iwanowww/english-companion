@@ -7,6 +7,8 @@ The service helps to memorize words and phrases added by the user to his diction
 - engine - implements the logic for managing a set of user phrases and asking him questions. 
 The services are implemented as spring-boot applications, interaction between services is carried out through the rabbitmq message broker.
 
+Spring Data JPA, Flyway, RabbitMQ, PostgreSQL are used.
+
 ## Building english-companion
 
 To build, run:
